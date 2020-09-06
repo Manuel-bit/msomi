@@ -19,5 +19,6 @@ from django.conf.urls import url, include
 
 urlpatterns = [
     url(r'^users/', include('users.urls')),
+    url(r'^e-learning/', include('e_learning.urls')),
     path('admin/', admin.site.urls),
 ]
