@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^register-option/$', views.RegisterOption, name="register_option"),
     url(r'^student_register/$', views.StudentRegister, name="student_register"),
     url(r'^tutor_register/$', views.TutorRegister, name="tutor_register"),
+    url(r'^logout/$', views.logoutUser, name="logout"),
 ]

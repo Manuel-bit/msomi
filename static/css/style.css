@@ -73,6 +73,9 @@ h1, h2, h3, h4, h5,
   padding: 5.5em 0; 
   background-image: url('../imgs/cole-keister-vEgVWRBr2VY-unsplash.jpg');
 }
+.site-section-1 h4{
+ color: white;
+}
   @media (min-width: 768px) {
     .site-section {
       padding: 5em 0; } }
@@ -714,7 +717,7 @@ h1, h2, h3, h4, h5,
   display: inline-block;
   width: 40px;
   height: 40px;
-  background: #183A37;
+  background: #023047;
   position: relative; }
   .social-wrap a > span {
     position: absolute;
@@ -1095,9 +1098,14 @@ h1, h2, h3, h4, h5,
     stroke-dashoffset: -136px; } }
 
 .py-2{
-  background-color: #183A37;
+  background-color: #023047;
   color: #EFD6AC;
 }
+
+.py-2 a{
+  color: #EFD6AC;
+}
+
 #intro-text{
   color: #EFD6AC;
 }
