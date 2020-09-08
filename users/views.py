@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .forms import CreateUserForm
+from .forms import CreateUserForm,UserUpdateForm,StudentUpdateForm
 from django.contrib.auth.models import Group
 from django.contrib import messages
 from .models import Tutor, Student
@@ -57,3 +57,26 @@ def logoutUser(request):
 	logout(request)
 	return redirect('/')
 
+@login_required
+def profile(request):
+    if request.method == 'POST':
+        u_form = UserUpdateForm(request.POST, instance=request.user)
+        sp_form = StudentUpdateForm(request.POST,
+                                   request.FILES,
+                                   instance=request.user.student)
+        if u_form.is_valid() and sp_form.is_valid():
+            u_form.save()
+            sp_form.save()
+            messages.success(request, f'Your account has been updated!')
+            return redirect('student_profile')
+
+    else:
+        u_form = UserUpdateForm(instance=request.user)
+        sp_form = StudentUpdateForm(instance=request.user.student)
+
+    context = {
+        'u_form': u_form,
+        'sp_form': sp_form
+    }
+
+    return render(request, 'e-learning/student_update.html',context)
