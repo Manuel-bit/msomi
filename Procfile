@@ -1,0 +1,1 @@
+web: msomi_elearning.wsgi
